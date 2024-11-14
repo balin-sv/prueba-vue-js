@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import SearchBarComponent from '@/components/SearchBarComponent.vue'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import ChartComponent from '@/components/ChartComponent.vue'
+import SummaryComponent from '@/components/SummaryComponent.vue'
+import TabComponent from '@/components/TabComponent.vue'
+import InstrumentListComponent from '@/components/InstrumentListComponent.vue'
+</script>
 
 <template>
   <v-container fluid class="bg-black fill-height pa-0">
@@ -8,28 +15,27 @@
         class="d-flex justify-center align-center"
         style="height: 10vh"
       >
-        <v-col cols="12"> </v-col>
+        <SearchBarComponent />
       </v-col>
-      <v-col
-        cols="9"
-        class="d-flex justify-center align-center"
-        style="height: 50vh"
-      >
-        <v-sheet class="w-100 h-100 bg-grey-lighten-2"> </v-sheet>
+      <v-col cols="9" class="d-flex flex-column" style="height: 50vh">
+        <HeaderComponent class="flex-shrink-0" />
+        <ChartComponent class="flex-grow-1" />
       </v-col>
       <v-col
         cols="3"
-        class="d-flex justify-center align-center"
+        class="d-flex flex-column justify-start align-start pt-4"
         style="height: 50vh"
       >
-        <v-sheet class="w-100 h-100 bg-grey-lighten-3"> </v-sheet>
+        <SummaryComponent />
       </v-col>
       <v-col
         cols="12"
         class="d-flex justify-center align-center"
         style="height: 40vh"
       >
-        <v-sheet class="w-100 h-100 bg-grey-lighten-4"> </v-sheet>
+        <TabComponent>
+          <template #table-content> <InstrumentListComponent /> </template>
+        </TabComponent>
       </v-col>
     </v-row>
   </v-container>
