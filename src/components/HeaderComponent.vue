@@ -22,9 +22,9 @@ const props = defineProps({
 <template>
   <div class="w-100 px-5">
     <h2>Title</h2>
-    <small class="mt-1 d-inline-block">Indice</small>
+    <small class="mt-1 d-inline-block pb-2">Indice</small>
     <hr class="thin-line w-100" />
-    <v-row class="d-flex align-start">
+    <v-row class="d-flex align-start py-3">
       <v-col cols="auto" class="mr-2">
         <small>Valor Actual</small> <span>{{ currentValue }}</span>
       </v-col>
@@ -43,6 +43,6 @@ const props = defineProps({
 .thin-line {
   height: 1px;
   border: none;
-  background-color: #ffffff; /* Цвет линии */
+  background-color: #ffffff;
 }
 </style>

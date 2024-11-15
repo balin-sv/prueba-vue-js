@@ -13,6 +13,7 @@
     </thead>
     <tbody>
       <InstrumentItemComponent
+        class="cursor-pointer"
         v-for="item in tableValues"
         :key="item.name"
         :item="item"

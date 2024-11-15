@@ -6,9 +6,6 @@ export const useMainStore = defineStore('main', {
     tableData: constituensList,
     currentItem: null
   }),
-  getters: {
-    getCurrentItem: (state) => state.currentItem
-  },
   actions: {
     resetState() {
       this.user.id = undefined
@@ -18,7 +15,6 @@ export const useMainStore = defineStore('main', {
     },
     showDetails(item) {
       this.currentItem = item
-      console.log('showDetails', item)
     }
   }
 })
