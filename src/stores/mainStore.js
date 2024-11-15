@@ -7,9 +7,6 @@ export const useMainStore = defineStore('main', {
     currentItem: null
   }),
   actions: {
-    resetState() {
-      this.user.id = undefined
-    },
     getTableItems() {
       return this.tableData
     },
