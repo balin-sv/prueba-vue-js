@@ -5,6 +5,17 @@ import ChartComponent from '@/components/ChartComponent.vue'
 import SummaryComponent from '@/components/SummaryComponent.vue'
 import TabComponent from '@/components/TabComponent.vue'
 import InstrumentListComponent from '@/components/InstrumentListComponent.vue'
+
+import { onMounted, ref } from 'vue'
+import { useMainStore } from '@/stores/mainStore'
+
+const mainStore = useMainStore()
+const tableValues = ref({})
+
+onMounted(() => {
+  tableValues.value = mainStore.getTableItems().data.constituents
+  console.log(tableValues.value)
+})
 </script>
 
 <template>
@@ -34,7 +45,9 @@ import InstrumentListComponent from '@/components/InstrumentListComponent.vue'
         style="height: 40vh"
       >
         <TabComponent>
-          <template #table-content> <InstrumentListComponent /> </template>
+          <template #table-content>
+            <InstrumentListComponent />
+          </template>
         </TabComponent>
       </v-col>
     </v-row>
