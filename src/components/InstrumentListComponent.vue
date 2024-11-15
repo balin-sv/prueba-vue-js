@@ -16,6 +16,7 @@
         v-for="item in tableValues"
         :key="item.name"
         :item="item"
+        @click="test(item)"
       />
     </tbody>
   </v-table>
@@ -29,8 +30,12 @@ import { useMainStore } from '@/stores/mainStore'
 const mainStore = useMainStore()
 const tableValues = ref([])
 
+const test = (item) => {
+  console.log('test')
+  mainStore.showDetails(item)
+}
+
 onMounted(() => {
   tableValues.value = mainStore.getTableItems().data.constituents
-  console.log(tableValues.value)
 })
 </script>
