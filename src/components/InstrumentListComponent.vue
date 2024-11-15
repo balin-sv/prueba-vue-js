@@ -37,6 +37,6 @@ const test = (item) => {
 }
 
 onMounted(() => {
-  tableValues.value = mainStore.getTableItems().data.constituents
+  tableValues.value = mainStore.getTableItems().data?.constituents
 })
 </script>

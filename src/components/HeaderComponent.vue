@@ -3,8 +3,7 @@ import { computed } from 'vue'
 import { useMainStore } from '@/stores/mainStore'
 const mainStore = useMainStore()
 const data = computed(() => {
-  console.log(mainStore.tableData.data.info)
-  return mainStore.tableData.data.info ?? null
+  return mainStore.tableData.data?.info ?? null
 })
 </script>
 
